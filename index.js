@@ -42,10 +42,8 @@ async function run () {
     results.push(res);
     fs.writeFileSync('results.json', JSON.stringify(results));
     await page.close();
-    console.log('Closed Page')
   }
   await browser.close();
-  console.log('Closed Browser')
 }
 
 const launchBrowser = () => new Promise(async (resolve, reject) => {
@@ -64,7 +62,6 @@ const launchBrowser = () => new Promise(async (resolve, reject) => {
       ],
       ignoreHTTPSErrors: true,
     });
-    console.log('Launched Browser');
     resolve(browser);
   } catch (error) {
     console.log('Browser Launch Error: ', error);
@@ -94,7 +91,6 @@ const launchPage = (browser) => new Promise(async (resolve, reject) => {
       width: 1366,
       height: 768
     });
-    console.log('Launched Page');
     resolve(page);
   } catch (error) {
     console.log('Launch Page Error: ', error)

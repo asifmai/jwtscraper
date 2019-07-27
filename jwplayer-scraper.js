@@ -34,7 +34,8 @@ module.exports.getMediaSources = function (pageUrl, page) {
     await page.goto(pageUrl, {
       waitUntil: "networkidle2"
     });
-    await page.waitFor(5000);
+    await page.waitFor(10000);
+    console.log(sources)
     resolve(sources);
   });
 };
