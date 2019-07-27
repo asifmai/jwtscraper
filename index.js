@@ -41,6 +41,7 @@ async function run () {
     results.push(res);
     fs.writeFileSync('results.json', JSON.stringify(results));
     await page.close();
+    console.log('Closed Page')
   }
   await browser.close();
 }

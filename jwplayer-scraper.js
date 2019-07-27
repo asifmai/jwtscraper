@@ -24,15 +24,14 @@ module.exports.getMediaSources = function (pageUrl, page) {
         } else {
           _request.continue();
         }
-      } else if (blockedResources.includes(_request.resourceType())){
-        // console.log('Not Found.. Continuing Request');
-        _request.abort();
+      // } else if (blockedResources.includes(_request.resourceType())){
+      //   // console.log('Not Found.. Continuing Request');
+      //   _request.abort();
       } else {
         _request.continue();
       }
     });
     await page.goto(pageUrl, {
-      timeout: 0,
       waitUntil: "networkidle2"
     });
     resolve(sources);
