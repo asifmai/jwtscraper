@@ -32,6 +32,7 @@ const results = [];
 async function run () {
   const browser = await launchBrowser();
   for (let i = 0; i < URLs.length; i++) {
+    console.log(`Scraping URL # ${i + 1}`)
     const page = await launchPage(browser);
     const rawRes = await scraper.getMediaSources(URLs[i].url, page);
     const res = {
@@ -44,6 +45,7 @@ async function run () {
     console.log('Closed Page')
   }
   await browser.close();
+  console.log('Closed Browser')
 }
 
 const launchBrowser = () => new Promise(async (resolve, reject) => {
