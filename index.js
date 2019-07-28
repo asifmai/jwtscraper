@@ -49,7 +49,7 @@ async function run () {
 const launchBrowser = () => new Promise(async (resolve, reject) => {
   try {
     const browser = await puppeteer.launch({
-      headless: false,                        
+      headless: true,                        
       args: [
         '--disable-setuid-sandbox',
         '--disable-infobars',
