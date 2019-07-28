@@ -1,18 +1,1 @@
-[{
-  "label": "Moohan",
-  "videoURL": "http://183.110.216.75/mudo_live/_definst_/mudo_live_1m.stream/playlist.m3u8"
-}, {
-  "label": "SBS Server 1",
-  "videoURL": "http://live.sbs.co.kr/sbsch6/_definst_/sbsch62.stream/playlist.m3u8?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjQyNTE4NzUsInBhdGgiOiIvc2JzY2g2L19kZWZpbnN0Xy9zYnNjaDYyLnN0cmVhbSIsImR1cmF0aW9uIjotMX0.AtC0wh9Qfs6Dwo7ma8opAXfuORWZTYS2rEoOaZIdYPA"
-}, {
-  "label": "SBS Server 2",
-  "videoURL": "http://m4.rmcast.com:1935/jlive/broadcast02/playlist.m3u8"
-}, {
-  "label": "MBC Server 1"
-}, {
-  "label": "OCN Server 1",
-  "videoURL": "http://122.129.115.21:1935/edgedol/_definst_/tao131/playlist.m3u8"
-}, {
-  "label": "KBSW",
-  "videoURL": "http://hls.live.kbskme.gscdn.com/www_kbsn_wtv/_definst_/kbsn_wtv_3.stream/playlist.m3u8?_lsu_sa_=30558d3dec763193f08217dc3e01173f73356d626a8c843a6b040e3320a53659d9d48e863463d06adc7b3e359cb0c3b1bafa1ba5f41ddf11c129c587fc2a51780b3084eda335535abe914626720af919"
-}]
+[{"label":"Moohan","videoURL":"http://183.110.216.75/mudo_live/_definst_/mudo_live_1m.stream/playlist.m3u8"}]

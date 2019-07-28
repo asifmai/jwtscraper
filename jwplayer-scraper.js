@@ -4,16 +4,13 @@ module.exports.getMediaSources = function (pageUrl, page) {
   return new Promise(async resolve => {
     let sources = [];
     await page.setRequestInterception(true);
-    const blockedResources = ['image', 'stylesheet', 'media', 'font', 'texttrack', 'object', 'beacon', 'csp_report', 'imageset'];
     page.on("console", message => {
       try {
         sources = JSON.parse(message.text()).scrapeList;
       } catch (error) {}
     });
     page.on("request", async _request => {
-      // console.log(_request.resourceType())
       if (_request.resourceType() === 'script') {
-        // console.log('Found.. Intercepting request...');
         let scriptContent = await request(_request._url);
         if (scriptContent.toString().indexOf("jwplayer=function") !== -1) {
           console.log('Found JWT');
@@ -24,9 +21,6 @@ module.exports.getMediaSources = function (pageUrl, page) {
         } else {
           _request.continue();
         }
-      // } else if (blockedResources.includes(_request.resourceType())){
-      //   // console.log('Not Found.. Continuing Request');
-      //   _request.abort();
       } else {
         _request.continue();
       }

@@ -49,7 +49,7 @@ async function run () {
 const launchBrowser = () => new Promise(async (resolve, reject) => {
   try {
     const browser = await puppeteer.launch({
-      headless: true,                        
+      headless: false,                        
       args: [
         '--disable-setuid-sandbox',
         '--disable-infobars',
@@ -57,8 +57,9 @@ const launchBrowser = () => new Promise(async (resolve, reject) => {
         '--ignore-certifcate-errors',
         '--ignore-certifcate-errors-spki-list',
         '--window-size=1366,768',      
-        '--no-sandbox',                  
-        // '--proxy-server=143.255.52.90:8080',    //To use a sock5 proxy
+        '--no-sandbox',
+        '--proxy-server=zproxy.lum-superproxy.io:22225',
+        // '--proxy-server=143.255.52.90:8080',
       ],
       ignoreHTTPSErrors: true,
     });
@@ -87,9 +88,9 @@ const launchPage = (browser) => new Promise(async (resolve, reject) => {
         get: () => [1, 2, 3, 4, 5],
       });
     });
-    await page.setViewport({
-      width: 1366,
-      height: 768
+    await page.authenticate({
+      username: 'lum-customer-hl_4ebb9317-zone-zona',
+      password: 'uo531xw2klrk',
     });
     resolve(page);
   } catch (error) {
